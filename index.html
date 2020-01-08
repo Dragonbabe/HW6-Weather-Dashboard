@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -15,11 +19,11 @@
         <td><input id="userinput"><button id="searchbutton">Click Here to Search!</button></td>
         <td>
             <h3>City Name</h3>
-            <div id="currenttemp">Current Temperature <span id="displaytemp">I'm a <strong>span</strong>.</span></div>
-            <div>Current Humidity</div>
-            <div>Wind speed</div>
-            <div>Index</div>
-            <div>5 Day Forecast</div>
+            <div id="currenttemp">Current Temperature <span id="displaytemp"></span></div>
+            <div>Current Humidity <span id="displayhumidity"></span></div>
+            <div>Wind speed <span id="displaywindspeed"></span></div>
+            <div>UV Index <span id="displayuvindex"></span></div>
+            <div>5 Day Forecast <span id="display5dayforecast"></span></div>
 
         </td>
 
@@ -38,7 +42,7 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="script.js"></script>
 </body>
 
