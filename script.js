@@ -8,7 +8,10 @@ $(document).ready(function () {
         var city = userInput.value;
         populateWeatherdata(city);
 
-
+        var buttonElement = document.createElement('button');
+        buttonElement.classList.add("btn", "btn-lg", "btn-outline-secondary");
+        buttonElement.innerText = city;
+        $("#displaycities").append(buttonElement);
     })
 
 
