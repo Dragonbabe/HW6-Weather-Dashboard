@@ -15,20 +15,23 @@
 <body>
     <h1>Weather Dashboard!</h1>
     <h2>Search For A City</h2>
-    <table>
-        <td><input id="userinput"><button id="searchbutton">Click Here to Search!</button></td>
-        <td>
+    <div class="row">
+        <div class="col-4"><input id="userinput"><button id="searchbutton">Click Here to Search!</button>
+            <div id="displaycities"></div>
+        </div>
+        <div class="col">
             <h3>City Name</h3>
             <div id="currenttemp">Current Temperature <span id="displaytemp"></span></div>
             <div>Current Humidity <span id="displayhumidity"></span></div>
+
             <div>Wind speed <span id="displaywindspeed"></span></div>
             <div>UV Index <span id="displayuvindex"></span></div>
             <div>5 Day Forecast <span id="display5dayforecast"></span></div>
-            <div id="displaycities"></div>
+        </div>
+    </div>
 
-        </td>
 
-    </table>
+
 
 
 
