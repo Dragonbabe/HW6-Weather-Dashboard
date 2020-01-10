@@ -29,9 +29,9 @@ $(document).ready(function () {
             },
             method: 'GET'
         }).then(function (result) {
-            console.log(result.weather[0].icon);
+
             let imgURL = './assets/' + result.weather[0].icon + '@2x.png';
-            console.log(imgURL);
+
 
             $('#icons').attr("src", imgURL);
             $("#displaytemp").text(result.main.temp);
@@ -51,18 +51,12 @@ $(document).ready(function () {
             },
             method: 'GET'
         }).then(function (result) {
-            console.log(result);
+            //create a new variable to store info for my day 5
+            let imgURL = './assets/' + result.list[0].weather[0].icon + '@2x.png';
 
-            // let imgURL = './assets/' + result.weather[0].icon + '@2x.png';
+            $("#temperatureday5").text('hello');
 
-            // console.log(imgURL);
-            $("#display5dayforecast").text(result.list[0].main.temp);
-            // $('#icons').attr("src", imgURL);
-            // $("#displaytemp").text(result.main.temp);
-            // $("#displayhumidity").text(result.main.humidity);
-            // $("#displaywindspeed").text(result.wind.speed);
-            // getUVIndex(result.coord.lat, result.coord.lon);
-            let html = '<h2>' + 'cityname' + '</h2>';
+            let html = '<p>' + 'temperature' + '</p>';
 
             $('body').append(html)
 
@@ -71,7 +65,7 @@ $(document).ready(function () {
     }
     function getUVIndex(lat, lon) {
 
-        console.log(lat, lon);
+
 
         $.ajax({
             type: 'GET',
