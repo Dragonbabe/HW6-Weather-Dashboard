@@ -62,9 +62,9 @@ $(document).ready(function () {
             // $("#displayhumidity").text(result.main.humidity);
             // $("#displaywindspeed").text(result.wind.speed);
             // getUVIndex(result.coord.lat, result.coord.lon);
-            //let html = '<h2>' + cityname + '</h>' + 
+            let html = '<h2>' + 'cityname' + '</h2>';
 
-            //$('your new div name ').append(html)
+            $('body').append(html)
 
         });
 
