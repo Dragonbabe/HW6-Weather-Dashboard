@@ -13,22 +13,56 @@
 </head>
 
 <body>
-    <h1>Weather Dashboard!</h1>
-    <h2>Search For A City</h2>
-    <div class="row">
-        <div class="col-4"><input id="userinput"><button id="searchbutton">Click Here to Search!</button>
-            <div id="displaycities"></div>
-        </div>
-        <div class="col">
-            <h3>City Name</h3>
-            <div id="currenttemp">Current Temperature <span id="displaytemp"></span></div>
-            <div>Current Humidity <span id="displayhumidity"></span></div>
+    <div class="container">
+        <h1>Weather Dashboard!</h1>
+        <h2>Search For A City</h2>
+        <div class="row">
+            <div class="col-4"><input id="userinput"><button id="searchbutton">Click Here to Search!</button>
+                <div id="displaycities"></div>
+                <img id="icons" src="" alt="weather icon">
+            </div>
+            <div class="col-8">
+                <h3 id="currentcity"></h3>
+                <div id="currenttemp">Current Temperature <span id="displaytemp"></span></div>
+                <div>Current Humidity <span id="displayhumidity"></span></div>
 
-            <div>Wind speed <span id="displaywindspeed"></span></div>
-            <div>UV Index <span id="displayuvindex"></span></div>
-            <div>5 Day Forecast <span id="display5dayforecast"></span></div>
+                <div>Wind speed <span id="displaywindspeed"></span></div>
+                <div>UV Index <span id="displayuvindex"></span></div>
+            </div>
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h2>5 Day Forecast</h2>
+            </div>
+
+            <div class="row">
+                <div class="col-2">
+                    <div id="displayday1"></div>
+                </div>
+
+                <div class="col-2">
+                    <div id="displayday2"></div>
+                </div>
+
+                <div class="col-2">
+                    <div id="displayday3">day 3</div>
+                </div>
+
+                <div class="col-2">
+                    <div id="displayday4">day 4</div>
+                </div>
+
+                <div class="col-2">
+                    <div id="displayday5"></div>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
+
 
 
 
