@@ -51,12 +51,11 @@ $(document).ready(function () {
             },
             method: 'GET'
         }).then(function (result) {
-            //create a new variable to store info for my day 5
+            console.log(result);
             let imgURL = './assets/' + result.list[0].weather[0].icon + '@2x.png';
 
             $("#temperatureday5").text('hello');
 
-            let html = '<p>' + 'temperature' + '</p>';
 
             $('body').append(html)
 
