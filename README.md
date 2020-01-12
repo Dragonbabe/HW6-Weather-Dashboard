@@ -1,5 +1,7 @@
 # HW6-Weather-Dashboard
 
+You can view this link webside by visiting [Here](https://dragonbabe.github.io/HW6-Weather-Dashboard/)
+
 ## Table of contents
 - [General info](#general-info)
 - [Technologies](#Technologies)
