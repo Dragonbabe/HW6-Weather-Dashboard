@@ -46,7 +46,7 @@ $(document).ready(function () {
             $("#displaywindspeed").text(result.wind.speed);
             getUVIndex(result.coord.lat, result.coord.lon);
             $("#currentcity").text(result.name);
-            $('#currentdate').text(moment(result.dt).utc(true).format('dddd, MMMM Do'));
+            $('#currentdate').text(moment.unix(result.dt).format('dddd MMM Do h:mm a'));
             //console.log(result.date);
         });
 
@@ -71,10 +71,10 @@ $(document).ready(function () {
                 var cardEl = $("<div class='card'>");
                 var containerEl = $("<div class='container'></div>");
                 //create date element here
-                var date = parseInt(result.list[i].dt) + parseInt(result.list[i].timezone);
+                var dateEl = $('<h5>');
+                dateEl.text(moment.unix(result.list[i].dt).format('dddd MMM Do'))
 
-                date = moment.unix(date).utc(false);
-                //console.log(date.format('dddd, MMMM Do YYYY'));
+
 
 
                 var temperatureEl = $("<p>");
@@ -83,6 +83,7 @@ $(document).ready(function () {
                 temperatureEl.text("Temperature " + result.list[i].main.temp);
                 humidityEl.text("Humidity " + result.list[i].main.humidity);
                 // add date element to append array
+
                 containerEl.append([humidityEl, temperatureEl, imageEl]);
                 cardEl.append(containerEl);
                 $('#displayforecast').append(cardEl);
