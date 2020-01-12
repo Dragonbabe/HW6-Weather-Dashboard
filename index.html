@@ -9,6 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" type="text/javascript"></script>
 
 </head>
 
@@ -17,108 +18,41 @@
         <h1>Weather Dashboard!</h1>
         <h2>Search For A City</h2>
         <div class="row">
-            <div class="col-4"><input id="userinput"><button id="searchbutton">Click Here to Search!</button>
+            <div class="col-4">
+                <input id="userinput" />
+                <button id="searchbutton">Click Here to Search!</button>
                 <div id="displaycities"></div>
                 <img id="icons" src="" alt="weather icon">
             </div>
             <div class="col-8">
                 <h3 id="currentcity"></h3>
-                <div id="currenttemp">Current Temperature <div id="displaytemp"></div>
-                </div>
+                <div id="currenttemp">Current Temperature</div>
+                <div id="displaytemp"></div>
+
                 <div>Current Humidity <div id="displayhumidity"></div>
 
                     <div>Wind speed <div id="displaywindspeed"></div>
                         <div>UV Index <div id="displayuvindex"></div>
                         </div>
-                    </div>
 
-                    <div class="row">
-                        <div class="col-12">
-                            <h2>5 Day Forecast</h2>
-                        </div>
 
                         <div class="row">
-
-                            <div class="card">
-                                <div class="container">
-                                    <p>Humidity</p>
-                                    <p>Temperature</p>
-                                    <img id="icons" src="" alt="weather icon">
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="container">
-                                    <p>Humidity</p>
-                                    <p>Temperature</p>
-                                    <img id="icons" src="" alt="weather icon">
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="container">
-                                    <p>Humidity</p>
-                                    <p>Temperature</p>
-                                    <img id="icons" src="" alt="weather icon">
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="container">
-                                    <p>Humidity</p>
-                                    <p>Temperature</p>
-                                    <img id="icons" src="" alt="weather icon">
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="container">
-                                    <p id="humidityday5">Humidity</p>
-                                    <p id="temperatureday5">Temperature</p>
-                                    <img id="icons" src="" alt="weather icon">
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div id="displayday1"></div>
+                            <div class="col-12">
+                                <h2>5 Day Forecast</h2>
                             </div>
 
-                            <div class="col-4">
-                                <div id="displayday2"></div>
-                            </div>
-
-                            <div class="col-4">
-                                <div id="displayday3"></div>
-                            </div>
-
-                            <div class="col-4">
-                                <div id="displayday4"></div>
-                            </div>
-
-                            <div class="col-4">
-                                <div id="displayday5"></div>
+                            <div class="row" id="displayforecast">
                             </div>
 
                         </div>
 
                     </div>
-
                 </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

@@ -1,14 +1,21 @@
 $(document).ready(function () {
+
     var userInput = document.querySelector('#userinput');
     var searchButton = document.querySelector('#searchbutton');
 
     searchButton.addEventListener('click', function () {
         var city = userInput.value;
+        window.localStorage.setItem(city, city);
         populateWeatherdata(city);
 
         var buttonElement = document.createElement('button');
         buttonElement.classList.add("btn", "btn-lg", "btn-outline-secondary");
         buttonElement.innerText = city;
+        buttonElement.addEventListener('click', function () {
+
+
+            populateWeatherdata(window.localStorage.getItem(this.innerHTML));
+        })
         $("#displaycities").append(buttonElement);
     })
 
@@ -16,8 +23,7 @@ $(document).ready(function () {
 
         var queryUrl = "https://api.openweathermap.org/data/2.5/weather";
         var forecastUrl = "https://api.openweathermap.org/data/2.5/forecast";
-        var lat;
-        var lon;
+
 
         $.ajax({
             url: queryUrl,
@@ -29,6 +35,7 @@ $(document).ready(function () {
             },
             method: 'GET'
         }).then(function (result) {
+
 
             let imgURL = './assets/' + result.weather[0].icon + '@2x.png';
 
@@ -51,14 +58,27 @@ $(document).ready(function () {
             },
             method: 'GET'
         }).then(function (result) {
-            console.log(result);
-            let imgURL = './assets/' + result.list[0].weather[0].icon + '@2x.png';
 
-            $("#temperatureday5").text('hello');
+            $('#displayforecast').empty();
+            console.log("start of for loop", result.list);
+            for (var i = 0; i < result.list.length; i += 8) {
+                console.log("i'm in for loop");
+                //add a variable to capture each day for five days
+                let imgURL = './assets/' + result.list[i].weather[0].icon + '@2x.png';
 
-
-            $('body').append(html)
-
+                var cardEl = $("<div class='card'>");
+                var containerEl = $("<div class='container'></div>");
+                //create date element here
+                var temperatureEl = $("<p>");
+                var humidityEl = $("<p>");
+                var imageEl = $("<img alt='weather icon'>").attr("src", imgURL)
+                temperatureEl.text("Temperature " + result.list[i].main.temp);
+                humidityEl.text("Humidity " + result.list[i].main.humidity);
+                // add date element to append array
+                containerEl.append([humidityEl, temperatureEl, imageEl]);
+                cardEl.append(containerEl);
+                $('#displayforecast').append(cardEl);
+            }
         });
 
     }
