@@ -46,6 +46,8 @@ $(document).ready(function () {
             $("#displaywindspeed").text(result.wind.speed);
             getUVIndex(result.coord.lat, result.coord.lon);
             $("#currentcity").text(result.name);
+            $('#currentdate').text(moment(result.dt).utc(true).format('dddd, MMMM Do'));
+            //console.log(result.date);
         });
 
         $.ajax({
@@ -69,6 +71,12 @@ $(document).ready(function () {
                 var cardEl = $("<div class='card'>");
                 var containerEl = $("<div class='container'></div>");
                 //create date element here
+                var date = parseInt(result.list[i].dt) + parseInt(result.list[i].timezone);
+
+                date = moment.unix(date).utc(false);
+                //console.log(date.format('dddd, MMMM Do YYYY'));
+
+
                 var temperatureEl = $("<p>");
                 var humidityEl = $("<p>");
                 var imageEl = $("<img alt='weather icon'>").attr("src", imgURL)
