@@ -9,7 +9,7 @@ You can view this link webside by visiting [Here](https://dragonbabe.github.io/H
 - [Screenshots](#screenshots)
 - [Authors](#authors)
 - [License](#license)
-## General Info
+## Description of This Project
 This project is all about how to get weather information for various cities. The user can type in any city in the world, and can get the current temperature, humidity, UV index and even a cute little weather icon! It will also display the 5 day forecast for those cities and after the buttons display for cities that the user typed in, the user can just click that button again and see the information for that city dieplayed again.
 ## Technologies
 Project is created with :
