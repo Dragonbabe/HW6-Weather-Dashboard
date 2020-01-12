@@ -20,10 +20,8 @@ $(document).ready(function () {
     })
 
     function populateWeatherdata(city) {
-
         var queryUrl = "https://api.openweathermap.org/data/2.5/weather";
         var forecastUrl = "https://api.openweathermap.org/data/2.5/forecast";
-
 
         $.ajax({
             url: queryUrl,
@@ -35,11 +33,7 @@ $(document).ready(function () {
             },
             method: 'GET'
         }).then(function (result) {
-
-
             let imgURL = './assets/' + result.weather[0].icon + '@2x.png';
-
-
             $('#icons').attr("src", imgURL);
             $("#displaytemp").text(result.main.temp);
             $("#displayhumidity").text(result.main.humidity);
@@ -47,7 +41,7 @@ $(document).ready(function () {
             getUVIndex(result.coord.lat, result.coord.lon);
             $("#currentcity").text(result.name);
             $('#currentdate').text(moment.unix(result.dt).format('dddd MMM Do h:mm a'));
-            //console.log(result.date);
+
         });
 
         $.ajax({
@@ -60,31 +54,19 @@ $(document).ready(function () {
             },
             method: 'GET'
         }).then(function (result) {
-
             $('#displayforecast').empty();
-
             for (var i = 0; i < result.list.length; i += 8) {
-
-                //add a variable to capture each day for five days
                 let imgURL = './assets/' + result.list[i].weather[0].icon + '@2x.png';
-
                 var cardEl = $("<div class='card'>");
                 var containerEl = $("<div class='container'></div>");
-                //create date element here
                 var dateEl = $('<h5>');
                 dateEl.text(moment.unix(result.list[i].dt).format('dddd MMM Do'))
-
-
-
-
                 var temperatureEl = $("<p>");
                 var humidityEl = $("<p>");
                 var imageEl = $("<img alt='weather icon'>").attr("src", imgURL)
                 temperatureEl.text("Temperature " + result.list[i].main.temp);
                 humidityEl.text("Humidity " + result.list[i].main.humidity);
-                // add date element to append array
-
-                containerEl.append([humidityEl, temperatureEl, imageEl]);
+                containerEl.append([dateEl, humidityEl, temperatureEl, imageEl]);
                 cardEl.append(containerEl);
                 $('#displayforecast').append(cardEl);
             }
@@ -92,8 +74,6 @@ $(document).ready(function () {
 
     }
     function getUVIndex(lat, lon) {
-
-
 
         $.ajax({
             type: 'GET',
