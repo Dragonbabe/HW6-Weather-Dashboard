@@ -60,9 +60,9 @@ $(document).ready(function () {
         }).then(function (result) {
 
             $('#displayforecast').empty();
-            console.log("start of for loop", result.list);
+
             for (var i = 0; i < result.list.length; i += 8) {
-                console.log("i'm in for loop");
+
                 //add a variable to capture each day for five days
                 let imgURL = './assets/' + result.list[i].weather[0].icon + '@2x.png';
 

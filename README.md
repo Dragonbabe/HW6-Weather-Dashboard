@@ -24,7 +24,7 @@ Project is created with :
 ![image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpyCRyE6QhNLE_RuX7YdYxHcZnAaLuroyK7o4SyFX7pkFht7EV&s)
 ![image](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRP739YoBzvxydnlsA736EBk-qe4BAwEmGk-TadkkQqB5RbaNFF&s)
 ## Summary
-You will find this web page very useful as it can give you much needed information when you travel. You will know weather you will need an umbrella, sunglasses or a parka! Enjoy! :laughing:
+You will find this web page very useful as it can give you much needed information when you travel. You will know weather you will need an umbrella, sunglasses or a parka! Enjoy! :smiley:
 ## Authors
 - Esther Walker
 ## License
